@@ -1,4 +1,4 @@
-#!/Users/vifonne/.brew/bin/python3
+#!/usr/bin/python3
 import  sys
 import	pygame as pg
 from	random import *
@@ -15,8 +15,8 @@ black = (0,0,0)
 pink = (255,200,200)
 brown = (61, 31, 33)
 colors = [red, green, blue, white, pink]
-win_w = 1920
-win_h = 1080
+win_w = 1080
+win_h = 720
 room_w = 90
 room_h = 70
 ant_size = 95
@@ -52,7 +52,7 @@ def	parse_stdin(l_stdin):
 			continue
 		if len(line.split()) == 3:
 			name.append(line.split()[0])
-			x.append(randint(room_w + (max(len_stdin)*12.5), win_w - room_w))
+			x.append(randint(room_w + (max(len_stdin)*10), win_w - room_w))
 			y.append(randint(room_h, win_h - room_h))
 		elif len(line.split("-")) == 2 and line.split("-")[0][0] != 'L':
 			ret = line.split("-")
@@ -261,4 +261,5 @@ def	main():
 	if (room):
 		print_map(room, ant_start)
 	sys.exit()
+
 main()
